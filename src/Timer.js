@@ -59,6 +59,8 @@ extends Component {
   }
 
   render() {
+    var buttonValue = this.state.isOn ? 'stop' : 'start';
+
     if (!this.state.seconds) {
       clearInterval(this.state.timer);
     }
@@ -66,7 +68,7 @@ extends Component {
     return (
       <div>
         <h1 onClick={this.handleClick}>{formatTime(this.state.seconds)}</h1>
-        <button onClick={this.handleClick}>start</button>
+        <button onClick={this.handleClick}>{buttonValue}</button>
         <button onClick={this.reset}>reset</button>
       </div>
     );

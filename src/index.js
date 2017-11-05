@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Timer from './Timer'
+import Timer from './Timer';
+import UpNext from './UpNext';
 
 function Title(props) {
   return (
@@ -17,7 +18,9 @@ extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seconds: 420
+      sessionSeconds: 4230,
+      breakSeconds: 2000,
+      onSession: true,
     };
   } // App constructor
 
@@ -25,7 +28,13 @@ extends Component {
     return (
       <div>
         <Title />
-        <Timer seconds={this.state.seconds}/>
+        <Timer
+          seconds={this.state.onSession ? this.state.sessionSeconds : this.state.breakSeconds}
+        />
+        <UpNext
+          onSession={this.state.onSession}
+          seconds={this.state.onSession ? this.state.breakSeconds : this.state.sessionSeconds}
+        />
       </div>
     );
   } // App.render

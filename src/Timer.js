@@ -45,6 +45,14 @@ extends Component {
   } // Temp
 
   tick(){
+    if (!this.state.seconds || this.props.forceStop) {
+      this.props.resetForceStop();
+      clearInterval(this.state.timer);
+      this.setState({
+        isOn: false,
+      });
+      return;
+    }
     this.setState({
       seconds: this.state.seconds - 1
     });
@@ -61,6 +69,7 @@ extends Component {
 
   componentWillReceiveProps(nextProps){
     if (!this.state.isOn && nextProps.seconds !== this.props.seconds){
+      console.log('Time Updated!');
       this.setState({
         seconds: nextProps.seconds,
       });
@@ -70,9 +79,6 @@ extends Component {
   render() {
     var buttonValue = this.state.isOn ? 'stop' : 'start';
 
-    if (!this.state.seconds) {
-      clearInterval(this.state.timer);
-    }
     return (
       <div>
         <h1 onClick={this.handleClick}>{formatTime(this.state.seconds)}</h1>

@@ -32,6 +32,8 @@ extends Component {
 
   sendUpdate(){
       if (this.props.timerIsOn){
+        this.props.forceStopTimer();
+        this.props.updateTimerStatus(false);
         return false;
       }
       this.props.update(this.state.time, this.props.title);
@@ -41,7 +43,7 @@ extends Component {
 
     return (
       <div className="container">
-        <h1 onClick={ () => { this.sendUpdate()} }>{this.props.title}</h1>
+        <h1 onClick={ () => { this.sendUpdate() } }>{this.props.title}</h1>
         <h2>{formatTime(this.state.time)}</h2>
         <button onClick={() => {this.setState({time: this.state.time + 60})}}><i className="fa fa-plus-square"></i></button>
         <button onClick={() => {this.setState({time: clearance(this.state.time - 60)})}}><i className="fa fa-minus-square"></i></button>

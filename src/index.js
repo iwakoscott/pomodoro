@@ -25,10 +25,13 @@ extends Component {
       selectedBreakSeconds: 300,
       onSession: true,
       timerIsOn: false,
+      forceStop: false,
     };
 
     this.handler = this.handler.bind(this);
     this.updateTimerStatus = this.updateTimerStatus.bind(this);
+    this.forceStopTimer = this.forceStopTimer.bind(this);
+    this.resetForceStop = this.resetForceStop.bind(this);
   } // App.constructor
 
   updateTimerStatus(s){
@@ -45,6 +48,18 @@ extends Component {
     }
   } // App.update
 
+  forceStopTimer(){
+    this.setState({
+      forceStop: true,
+    });
+  } // App.forceStopTimer
+
+  resetForceStop(){
+    this.setState({
+      forceStop: false,
+    });
+  }
+
   render(){
     return (
       <div>
@@ -52,6 +67,8 @@ extends Component {
         <Timer
           seconds={this.state.onSession ? this.state.sessionSeconds : this.state.breakSeconds}
           updateTimerStatus={this.updateTimerStatus}
+          forceStop={this.state.forceStop}
+          resetForceStop={this.resetForceStop}
         />
         <UpNext
           onSession={this.state.onSession}
@@ -61,11 +78,17 @@ extends Component {
           <Tab title={"session"}
                seconds={this.state.selectedSessionSeconds}
                update={this.handler}
-               timerIsOn={this.state.timerIsOn} />
+               timerIsOn={this.state.timerIsOn}
+               forceStopTimer={this.forceStopTimer}
+               updateTimerStatus={this.updateTimerStatus}
+               />
           <Tab title={"break"}
                seconds={this.state.selectedBreakSeconds}
                update={this.handler}
-               timerIsOn={this.state.timerIsOn} />
+               timerIsOn={this.state.timerIsOn}
+               forceStopTimer={this.forceStopTimer}
+               updateTimerStatus={this.updateTimerStatus}
+               />
         </div>
       </div>
     );

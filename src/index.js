@@ -32,7 +32,14 @@ extends Component {
     this.updateTimerStatus = this.updateTimerStatus.bind(this);
     this.forceStopTimer = this.forceStopTimer.bind(this);
     this.resetForceStop = this.resetForceStop.bind(this);
+    this.switchSessions = this.switchSessions.bind(this);
   } // App.constructor
+
+  switchSessions(){
+    this.setState({
+      onSession: !this.state.onSession,
+    });
+  }
 
   updateTimerStatus(s){
     this.setState({
@@ -58,7 +65,7 @@ extends Component {
     this.setState({
       forceStop: false,
     });
-  }
+  } // App.resetForceStop
 
   render(){
     return (
@@ -69,6 +76,7 @@ extends Component {
           updateTimerStatus={this.updateTimerStatus}
           forceStop={this.state.forceStop}
           resetForceStop={this.resetForceStop}
+          switchSessions={this.switchSessions}
         />
         <UpNext
           onSession={this.state.onSession}

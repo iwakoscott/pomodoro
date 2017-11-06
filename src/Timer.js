@@ -45,7 +45,16 @@ extends Component {
   } // Temp
 
   tick(){
-    if (!this.state.seconds || this.props.forceStop) {
+    if (!this.state.seconds) {
+      clearInterval(this.state.timer);
+      this.setState({
+        isOn: false,
+      });
+      this.props.switchSessions();
+      return;
+    }
+
+    else if (this.props.forceStop) {
       this.props.resetForceStop();
       clearInterval(this.state.timer);
       this.setState({
@@ -53,6 +62,7 @@ extends Component {
       });
       return;
     }
+
     this.setState({
       seconds: this.state.seconds - 1
     });

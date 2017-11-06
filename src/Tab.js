@@ -12,6 +12,14 @@ function formatTime(s) {
   return hh > 0 ? hh + ' : ' + mm + ' : ' + ss : mm  + ' : ' + ss;
 } // formatTime
 
+function clearance(x){
+  if (x > 60) {
+    return x;
+  } else {
+    return 60;
+  }
+} // clearance
+
 class Tab
 extends Component {
 
@@ -29,7 +37,7 @@ extends Component {
         <h1 onClick={ () => { this.props.update(this.state.time, this.props.title)} }>{this.props.title}</h1>
         <h2>{formatTime(this.state.time)}</h2>
         <button onClick={() => {this.setState({time: this.state.time + 60})}}><i className="fa fa-plus-square"></i></button>
-        <button onClick={() => {this.setState({time: this.state.time - 60})}}><i className="fa fa-minus-square"></i></button>
+        <button onClick={() => {this.setState({time: clearance(this.state.time - 60)})}}><i className="fa fa-minus-square"></i></button>
       </div>
     );
   }

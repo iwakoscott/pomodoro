@@ -20,7 +20,6 @@ extends Component {
       timer: null,
       seconds: this.props.seconds,
       isOn: false,
-      start: this.props.seconds,
     };
 
     this.tick = this.tick.bind(this);
@@ -53,8 +52,14 @@ extends Component {
   reset(){
     clearInterval(this.state.timer);
     this.setState({
-      seconds: this.state.start,
+      seconds: this.props.seconds,
       isOn: false,
+    });
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({
+      seconds: nextProps.seconds,
     });
   }
 

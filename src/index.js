@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Timer from './Timer';
 import UpNext from './UpNext';
+import Tab from './Tab';
 
 function Title(props) {
   return (
@@ -18,11 +19,23 @@ extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sessionSeconds: 4230,
-      breakSeconds: 2000,
+      sessionSeconds: 1500,
+      breakSeconds: 300,
+      selectedSessionSeconds: 1500,
+      selectedBreakSeconds: 300,
       onSession: true,
     };
-  } // App constructor
+
+    this.handler = this.handler.bind(this);
+  } // App.constructor
+
+  handler(time, type){
+    if (type === 'session'){
+      this.setState({ sessionSeconds: time });
+    } else {
+      this.setState({ breakSeconds: time });
+    }
+  } // App.update
 
   render(){
     return (
@@ -35,6 +48,10 @@ extends Component {
           onSession={this.state.onSession}
           seconds={this.state.onSession ? this.state.breakSeconds : this.state.sessionSeconds}
         />
+        <div className="container">
+          <Tab title={"session"} seconds={this.state.selectedSessionSeconds} update={this.handler} />
+          <Tab title={"break"} seconds={this.state.selectedBreakSeconds} update={this.handler} />
+        </div>
       </div>
     );
   } // App.render

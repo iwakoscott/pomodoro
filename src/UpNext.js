@@ -8,7 +8,7 @@ function formatTime(s) {
 } // formatTime
 
 function UpNext(props) {
-  var ending = props.onSession ? 'session' : 'break';
+  var ending = props.onSession ? 'break' : 'session';
   var message = formatTime(props.seconds) + ' ' + ending;
   return (
     <h1 id="upNext">up next - {message}</h1>

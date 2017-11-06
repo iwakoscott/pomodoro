@@ -7,8 +7,8 @@ import Tab from './Tab';
 function Title(props) {
   return (
     <div className="title-box container">
-      <h1 className="main-title"><i className="em em-tomato"></i></h1>
       <h1 className="main-title">[Pomodoro]</h1>
+      <h1 className="main-title"><i className="em em-tomato"></i></h1>
     </div>
   );
 } // Renders title to page

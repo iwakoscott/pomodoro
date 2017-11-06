@@ -24,10 +24,18 @@ extends Component {
       selectedSessionSeconds: 1500,
       selectedBreakSeconds: 300,
       onSession: true,
+      timerIsOn: false,
     };
 
     this.handler = this.handler.bind(this);
+    this.updateTimerStatus = this.updateTimerStatus.bind(this);
   } // App.constructor
+
+  updateTimerStatus(s){
+    this.setState({
+      timerIsOn: s
+    });
+  } // timerStatus
 
   handler(time, type){
     if (type === 'session'){
@@ -43,14 +51,21 @@ extends Component {
         <Title />
         <Timer
           seconds={this.state.onSession ? this.state.sessionSeconds : this.state.breakSeconds}
+          updateTimerStatus={this.updateTimerStatus}
         />
         <UpNext
           onSession={this.state.onSession}
           seconds={this.state.onSession ? this.state.breakSeconds : this.state.sessionSeconds}
         />
         <div className="container">
-          <Tab title={"session"} seconds={this.state.selectedSessionSeconds} update={this.handler} />
-          <Tab title={"break"} seconds={this.state.selectedBreakSeconds} update={this.handler} />
+          <Tab title={"session"}
+               seconds={this.state.selectedSessionSeconds}
+               update={this.handler}
+               timerIsOn={this.state.timerIsOn} />
+          <Tab title={"break"}
+               seconds={this.state.selectedBreakSeconds}
+               update={this.handler}
+               timerIsOn={this.state.timerIsOn} />
         </div>
       </div>
     );

@@ -41,6 +41,7 @@ extends Component {
         isOn: !this.state.isOn
       });
     } // if already running, stop.
+    this.props.updateTimerStatus(!this.state.isOn);
   } // Temp
 
   tick(){
@@ -55,12 +56,15 @@ extends Component {
       seconds: this.props.seconds,
       isOn: false,
     });
+    this.props.updateTimerStatus(!this.state.isOn);
   }
 
   componentWillReceiveProps(nextProps){
-    this.setState({
-      seconds: nextProps.seconds,
-    });
+    if (!this.state.isOn && nextProps.seconds !== this.props.seconds){
+      this.setState({
+        seconds: nextProps.seconds,
+      });
+    }
   }
 
   render() {
@@ -69,7 +73,6 @@ extends Component {
     if (!this.state.seconds) {
       clearInterval(this.state.timer);
     }
-
     return (
       <div>
         <h1 onClick={this.handleClick}>{formatTime(this.state.seconds)}</h1>

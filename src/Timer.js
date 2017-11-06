@@ -51,6 +51,7 @@ extends Component {
         isOn: false,
       });
       this.props.switchSessions();
+      this.props.updateTimerStatus(false);
       return;
     }
 
@@ -60,6 +61,7 @@ extends Component {
       this.setState({
         isOn: false,
       });
+      this.props.updateTimerStatus(false);
       return;
     }
 

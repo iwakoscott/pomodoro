@@ -19,6 +19,7 @@ extends Component {
     this.state = {
       timer: null,
       seconds: this.props.seconds,
+      inMemory: this.props.seconds,
       isOn: false,
     };
 
@@ -49,6 +50,7 @@ extends Component {
       clearInterval(this.state.timer);
       this.setState({
         isOn: false,
+        seconds: this.state.inMemory,
       });
       this.props.switchSessions();
       this.props.updateTimerStatus(false);
@@ -84,6 +86,7 @@ extends Component {
       console.log('Time Updated!');
       this.setState({
         seconds: nextProps.seconds,
+        inMemory: nextProps.seconds,
       });
     }
   }

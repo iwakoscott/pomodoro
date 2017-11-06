@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import Timer from './Timer';
 import UpNext from './UpNext';
 import Tab from './Tab';
+import CurrentSession from './CurrentSession'
 
 function Title(props) {
   return (
     <div className="title-box container">
       <h1 className="main-title">[Pomodoro]</h1>
       <h1 className="main-title"><i className="em em-tomato"></i></h1>
+      <CurrentSession onSession={props.onSession}/>
     </div>
   );
 } // Renders title to page
@@ -70,7 +72,7 @@ extends Component {
   render(){
     return (
       <div>
-        <Title />
+        <Title onSession={this.state.onSession}/>
         <Timer
           seconds={this.state.onSession ? this.state.sessionSeconds : this.state.breakSeconds}
           updateTimerStatus={this.updateTimerStatus}

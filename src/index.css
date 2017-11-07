@@ -47,6 +47,8 @@ body {
   padding-right: 30px;
   margin: 10px;
   border-radius: 15px;
+  outline: none;
+  border: none;
 }
 
 .timer-button:hover {

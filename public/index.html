@@ -43,5 +43,30 @@
     -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        function a(x){
+
+          $(x.target).parent().animate({
+            height: '400px'
+          }, 1000);
+
+          $(x.target).one('click', b);
+
+        }
+
+        function b(x){
+
+          $(x.target).parent().animate({
+            height: '50px'
+          }, 1000);
+
+          $(x.target).one('click', a);
+
+        }
+
+        $('.tab-header').unbind().one('click', a);
+      });
+    </script>
   </body>
 </html>

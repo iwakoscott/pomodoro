@@ -12,7 +12,7 @@ body {
 */
 .main-title {
   letter-spacing: 10px;
-  font-size: 60px;
+  font-size: 45px;
   text-align: center;
   color: white;
 }
@@ -41,7 +41,7 @@ body {
 
 .timer-button {
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   padding-left: 30px;
   padding-right: 30px;
   margin: 10px;
@@ -57,5 +57,73 @@ body {
   font-size: 30px;
   color: #f4e542;
   padding-right: 15px;
-  letter-spacing: 1px;
+}
+
+/* Tab */
+
+.tab-header {
+  background-color: #82b213;
+  color: white;
+}
+
+.tab-header:hover {
+  cursor: pointer;
+}
+
+.tabs {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
+
+.tab {
+  display: inline-block;
+  width: 45%;
+  height: 50px;
+  overflow-y: hidden;
+  border-radius: 2px;
+  border-width: thin;
+  background-color: white;
+  border-style: solid;
+  border-top-style: solid;
+  border-top-width: thin;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+}
+
+.tab-button {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 75px;
+  margin: 30px;
+  outline: none;
+  border: none;
+}
+
+.tab-button:hover {
+  cursor: pointer;
+}
+
+#tab-time {
+  font-size: 65px;
+}
+
+@media screen and (max-width: 400px) {
+  #upNext {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  #tab-time {
+    font-size: 25px;
+  }
+
+  .tab-button {
+    font-size: 40px;
+    margin: 2px;
+  }
 }

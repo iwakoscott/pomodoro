@@ -85,7 +85,7 @@ extends Component {
           onSession={this.state.onSession}
           seconds={this.state.onSession ? this.state.breakSeconds : this.state.sessionSeconds}
         />
-        <div className="container">
+        <div className="container tabs">
           <Tab title={"session"}
                seconds={this.state.selectedSessionSeconds}
                update={this.handler}

@@ -49,6 +49,9 @@ extends Component {
 
   tick(){
     if (!this.state.seconds) {
+
+      document.getElementById('audio').play();
+
       clearInterval(this.state.timer);
       this.setState({
         isOn: false,

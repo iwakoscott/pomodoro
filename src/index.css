@@ -78,6 +78,7 @@ body {
 }
 
 .tab-header:hover {
+  background-color: #97ce16;
   cursor: pointer;
 }
 

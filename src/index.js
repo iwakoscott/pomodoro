@@ -12,7 +12,7 @@ import './index.css'
 function Title(props) {
   return (
     <div className="title-box container">
-      <h1 className="main-title">[Pomodoro.]</h1>
+      <h1 className="main-title">[pomodoro.]</h1>
       <CurrentSession onSession={props.onSession}/>
     </div>
   );

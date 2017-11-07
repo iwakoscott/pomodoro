@@ -31,6 +31,8 @@ extends Component {
       onSession: true,
       timerIsOn: false,
       forceStop: false,
+      sessionTabIsOpen: false,
+      breakTabIsOpen: false,
     };
 
     this.handler = this.handler.bind(this);
@@ -38,7 +40,21 @@ extends Component {
     this.forceStopTimer = this.forceStopTimer.bind(this);
     this.resetForceStop = this.resetForceStop.bind(this);
     this.switchSessions = this.switchSessions.bind(this);
+    this.toggleTabStatus = this.toggleTabStatus.bind(this);
   } // App.constructor
+
+  toggleTabStatus(type){
+    if (type === "session") {
+      this.setState({
+        sessionTabIsOpen: !this.state.sessionTabIsOpen
+      });
+    }
+    else {
+      this.setState({
+        breakTabIsOpen: !this.state.breakTabIsOpen
+      });
+    }
+  }
 
   switchSessions(){
     this.setState({
@@ -82,6 +98,7 @@ extends Component {
           forceStop={this.state.forceStop}
           resetForceStop={this.resetForceStop}
           switchSessions={this.switchSessions}
+          aTabIsOpen={this.sessionTabIsOpen || this.breakTabIsOpen}
         />
         <UpNext
           onSession={this.state.onSession}
@@ -94,6 +111,7 @@ extends Component {
                timerIsOn={this.state.timerIsOn}
                forceStopTimer={this.forceStopTimer}
                updateTimerStatus={this.updateTimerStatus}
+               toggleTabStatus={this.toggleTabStatus}
                />
           <Tab title={"break"}
                seconds={this.state.selectedBreakSeconds}
@@ -101,6 +119,7 @@ extends Component {
                timerIsOn={this.state.timerIsOn}
                forceStopTimer={this.forceStopTimer}
                updateTimerStatus={this.updateTimerStatus}
+               toggleTabStatus={this.toggleTabStatus}
                />
         </div>
       </div>

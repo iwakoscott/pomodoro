@@ -32,6 +32,7 @@ extends Component {
   }
 
   sendUpdate(){
+      this.props.toggleTabStatus(this.props.title);
       if (this.props.timerIsOn){
         this.props.forceStopTimer();
         this.props.updateTimerStatus(false);

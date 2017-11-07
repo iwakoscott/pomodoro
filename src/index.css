@@ -40,11 +40,6 @@ body {
   background-color: #ff7a7a;
 }
 
-.timer:hover {
-  cursor: pointer;
-  color: pink;
-}
-
 .timer-button {
   text-align: center;
   font-size: 25px;

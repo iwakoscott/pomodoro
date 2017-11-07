@@ -98,10 +98,10 @@ extends Component {
 
     return (
       <div>
-        <h1 className="timer" onClick={this.handleClick}>{formatTime(this.state.seconds)}</h1>
+        <h1 className="timer">{formatTime(this.state.seconds)}</h1>
         <div className="container timer-buttons">
-          <button className="timer-button" onClick={this.handleClick}>{buttonValue}</button>
-          <button className="timer-button" onClick={this.reset}>reset</button>
+          <button disable={this.props.aTabIsOpen} className="timer-button" onClick={this.handleClick}>{buttonValue}</button>
+          <button disable={this.props.aTabIsOpen} className="timer-button" onClick={this.reset}>reset</button>
         </div>
       </div>
     );

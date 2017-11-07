@@ -98,6 +98,7 @@ body {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   text-align: center;
+  margin: 2px;
 }
 
 .tab-button {

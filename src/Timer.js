@@ -96,9 +96,11 @@ extends Component {
 
     return (
       <div>
-        <h1 onClick={this.handleClick}>{formatTime(this.state.seconds)}</h1>
-        <button onClick={this.handleClick}>{buttonValue}</button>
-        <button onClick={this.reset}>reset</button>
+        <h1 className="timer" onClick={this.handleClick}>{formatTime(this.state.seconds)}</h1>
+        <div className="container timer-buttons">
+          <button className="timer-button" onClick={this.handleClick}>{buttonValue}</button>
+          <button className="timer-button" onClick={this.reset}>reset</button>
+        </div>
       </div>
     );
   } // Timer.render

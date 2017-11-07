@@ -4,6 +4,7 @@ import Timer from './Timer';
 import UpNext from './UpNext';
 import Tab from './Tab';
 import CurrentSession from './CurrentSession'
+import './index.css'
 
 function Title(props) {
   return (

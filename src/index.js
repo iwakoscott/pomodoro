@@ -6,11 +6,13 @@ import Tab from './Tab';
 import CurrentSession from './CurrentSession'
 import './index.css'
 
+//  <h1 className="main-title"><i className="em em-tomato"></i></h1>
+
+
 function Title(props) {
   return (
     <div className="title-box container">
       <h1 className="main-title">[Pomodoro.]</h1>
-      <h1 className="main-title"><i className="em em-tomato"></i></h1>
       <CurrentSession onSession={props.onSession}/>
     </div>
   );

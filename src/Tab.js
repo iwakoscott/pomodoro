@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './font-awesome-4.7.0/css/font-awesome.css';
+import './index.css'
 
 function formatTime(s) {
   var hours = Math.floor(s/3600);

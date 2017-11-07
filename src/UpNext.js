@@ -1,4 +1,6 @@
 import React from 'react';
+import './index.css'
+
 
 function formatTime(s) {
   var hours = Math.floor(s/3600);

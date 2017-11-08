@@ -51,7 +51,7 @@ extends Component {
     if (!this.state.seconds) {
 
       document.getElementById('audio').play();
-
+      this.props.notify();
       clearInterval(this.state.timer);
       this.setState({
         isOn: false,

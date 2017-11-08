@@ -33,6 +33,7 @@ extends Component {
       forceStop: false,
       sessionTabIsOpen: false,
       breakTabIsOpen: false,
+      allowNotification: Notification.requestPermission(),
     };
 
     this.handler = this.handler.bind(this);
@@ -41,6 +42,7 @@ extends Component {
     this.resetForceStop = this.resetForceStop.bind(this);
     this.switchSessions = this.switchSessions.bind(this);
     this.toggleTabStatus = this.toggleTabStatus.bind(this);
+    this.notify = this.notify.bind(this);
   } // App.constructor
 
   toggleTabStatus(type){
@@ -88,6 +90,16 @@ extends Component {
     });
   } // App.resetForceStop
 
+  notify(){
+    var options = {
+      body: this.state.onSession ? 'Take a break. Drink some coffee. Breathe...' : 'Time to get some work done!',
+      icon: this.state.onSession ? "https://www.emojibase.com/resources/img/emojis/hangouts/2615.png" : "https://www.emojibase.com/resources/img/emojis/apple/x1f345.png.pagespeed.ic.-BK-NQmV1t.png" 
+    };
+    this.state.allowNotification.then(function(reg){
+      var n = new Notification("Times up!", options);
+    });
+  }
+
   render(){
     return (
       <div>
@@ -99,6 +111,7 @@ extends Component {
           resetForceStop={this.resetForceStop}
           switchSessions={this.switchSessions}
           aTabIsOpen={this.sessionTabIsOpen || this.breakTabIsOpen}
+          notify={this.notify}
         />
         <UpNext
           onSession={this.state.onSession}

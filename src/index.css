@@ -46,9 +46,10 @@ body {
   padding-left: 30px;
   padding-right: 30px;
   margin: 10px;
-  border-radius: 15px;
+  border-radius: 10px;
   outline: none;
   border: none;
+  box-shadow: 4px 3px 3px #383838;
 }
 
 .timer-button:hover {

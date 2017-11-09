@@ -33,7 +33,7 @@ extends Component {
       forceStop: false,
       sessionTabIsOpen: false,
       breakTabIsOpen: false,
-      allowNotification: Notification.requestPermission(),
+      allowNotification: "Notification" in window ? Notification.requestPermission() : false,
     };
 
     this.handler = this.handler.bind(this);
@@ -91,14 +91,16 @@ extends Component {
   } // App.resetForceStop
 
   notify(){
-    var options = {
-      body: this.state.onSession ? 'Take a break. Drink some coffee. Breathe...' : 'Time to get some work done!',
-      icon: this.state.onSession ? "https://www.emojibase.com/resources/img/emojis/hangouts/2615.png" : "https://www.emojibase.com/resources/img/emojis/apple/x1f345.png.pagespeed.ic.-BK-NQmV1t.png" 
-    };
-    this.state.allowNotification.then(function(reg){
-      var n = new Notification("Times up!", options);
-    });
-  }
+    if (this.state.allowNotification){
+      var options = {
+        body: this.state.onSession ? 'Take a break. Drink some coffee. Breathe...' : 'Time to get some work done!',
+        icon: this.state.onSession ? "https://www.emojibase.com/resources/img/emojis/hangouts/2615.png" : "https://www.emojibase.com/resources/img/emojis/apple/x1f345.png.pagespeed.ic.-BK-NQmV1t.png"
+      };
+      this.state.allowNotification.then(function(reg){
+        var n = new Notification("Times up!", options);
+      });
+    }
+  } // notify
 
   render(){
     return (

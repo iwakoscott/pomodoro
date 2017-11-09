@@ -50,6 +50,7 @@ body {
   outline: none;
   border: none;
   box-shadow: 4px 3px 3px #383838;
+  background-color: white;
 }
 
 .timer-button:hover {
@@ -102,7 +103,6 @@ body {
   border-top-right-radius: 20px;
   text-align: center;
   margin: 2px;
-  background-color: white;
 }
 
 .tab-button {
@@ -110,8 +110,8 @@ body {
   padding-right: 25px;
   padding-top: 15px;
   padding-bottom: 15px;
-  font-size: 75px;
-  margin: 30px;
+  font-size: 60px;
+  margin: 20px;
   outline: none;
   border: none;
   background-color: white;
@@ -122,6 +122,7 @@ body {
 }
 
 #tab-time {
+  margin-top: 25px;
   font-size: 65px;
 }
 
@@ -130,18 +131,23 @@ body {
 
   .timer {
     font-size: 75px;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
 
   #tab-time {
+    margin-top: 75px;
     font-size: 30px;
   }
 
   .tab-button {
-    font-size: 40px;
+    font-size: 30px;
     margin: 2px;
   }
 
   #upNext {
+    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: center;
     font-size: 23px;
   }

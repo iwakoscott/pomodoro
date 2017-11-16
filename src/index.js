@@ -6,12 +6,12 @@ import Tab from './Tab';
 import CurrentSession from './CurrentSession'
 import './index.css'
 
-//  <h1 className="main-title"><i className="em em-tomato"></i></h1>
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 function Title(props) {
   return (
-    <div className="title-box container">
+    <div className="title-box">
       <h1 className="main-title">[pomodoro.]</h1>
       <CurrentSession onSession={props.onSession}/>
     </div>
@@ -104,7 +104,7 @@ extends Component {
 
   render(){
     return (
-      <div>
+      <div className="container-fluid">
         <Title onSession={this.state.onSession}/>
         <Timer
           seconds={this.state.onSession ? this.state.sessionSeconds : this.state.breakSeconds}
@@ -119,7 +119,7 @@ extends Component {
           onSession={this.state.onSession}
           seconds={this.state.onSession ? this.state.breakSeconds : this.state.sessionSeconds}
         />
-        <div className="container tabs">
+        <div className="tabs row">
           <Tab title={"session"}
                seconds={this.state.selectedSessionSeconds}
                update={this.handler}

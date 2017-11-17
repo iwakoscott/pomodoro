@@ -45,13 +45,12 @@ html {
   text-align: center;
   color: white;
   font-size: 10em;
-  padding: 25px;
 }
 
 .timer-button {
   font-size: 3em;
-  width: 200px;
-  height: 75px;
+  width: 150px;
+  height: 65px;
   border-radius: 10px;
   margin: 10px;
   outline: none;
@@ -82,19 +81,20 @@ html {
 
 .tab-header {
   color: white;
-  letter-spacing: 5px;
   cursor: pointer;
+  font-size: 2em;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.tab-header:hover{
-  background-color: black;
-  opacity: .6;
+.tab-header:hover {
+  background-color: grey;
+  opacity: .3;
 }
 
 .tab {
   text-align: center;
-  z-index: 999999;
-  height: 75px;
+  height: 65px;
   overflow-y: hidden;
   background-color: white;
   color: white;

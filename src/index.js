@@ -135,7 +135,6 @@ extends Component {
                toggleTabStatus={this.toggleTabStatus}
                style={{'background-color': 'DarkOrange'}}
                />
-          <div className="clearfix"></div>
           <Tab title={"break"}
                seconds={this.state.selectedBreakSeconds}
                update={this.handler}

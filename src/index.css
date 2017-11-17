@@ -30,6 +30,10 @@ html {
   background-color: DarkSeaGreen;
 }
 
+.current-session {
+  font-size: 2em;
+}
+
 
 /* Timer */
 
@@ -114,13 +118,18 @@ html {
 
 @media screen and (max-width: 515px) {
 
+  .my-name {
+    visibility: hidden;
+    height: 0px;
+  }
+
   .main-title {
     font-size: 2em;
   }
 
   .timer {
     font-size: 5em;
-    padding: 5px;
+    padding: 0px;
   }
 
   .timer-button {
@@ -145,6 +154,10 @@ html {
     width: 120px;
     height: 50px;
     font-size: 2em;
+  }
+
+  .current-session {
+    font-size: 1.5em;
   }
 
 }

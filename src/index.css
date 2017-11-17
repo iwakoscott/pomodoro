@@ -122,6 +122,11 @@ html {
     font-size: 2em;
   }
 
+  .my-name {
+    visibility: hidden;
+    height: 0px;
+  }
+
   .timer {
     font-size: 5em;
     padding: 0px;

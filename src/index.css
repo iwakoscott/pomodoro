@@ -151,6 +151,10 @@ html {
     cursor: pointer;
   }
 
+  #tab-time {
+    font-size: 5em;
+  }
+
   .tab-button {
     width: 120px;
     height: 50px;

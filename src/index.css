@@ -1,154 +1,150 @@
 * {
-  padding: 0;
-  margin: 0;
   font-family: 'Baloo Da', cursive;
 }
 
-body {
-  background-color: #ff463d;
+html {
+  background-color: coral;
 }
-/*
-  Title
-*/
-.main-title {
-  letter-spacing: 10px;
-  font-size: 45px;
+
+/* Title */
+
+.title-box {
   text-align: center;
+  background-color: OrangeRed;
+  color: white;
+  padding: 10px;
+  letter-spacing: 5px;
+}
+
+.main-title {
+  font-size: 3.5em;
+}
+
+#sig {
+  font-size: 1.1em;
   color: white;
 }
 
-.em-tomato {
-  font-size: 20px;
-}
-
-.current-session {
-  font-size: 30px;
-  letter-spacing: 10px;
+.my-name {
   text-align: center;
-  color: #f4e542;
+  background-color: DarkSeaGreen;
 }
 
-/*
-  Timer
-*/
+
+/* Timer */
+
+.timer-row {
+  background-color: tomato;
+}
 
 .timer {
   text-align: center;
-  font-size: 200px;
-  letter-spacing: 2px;
   color: white;
-  background-color: #e53f37;
+  font-size: 10em;
+  padding: 25px;
 }
 
 .timer-button {
-  text-align: center;
-  font-size: 25px;
-  padding-left: 30px;
-  padding-right: 30px;
-  margin: 10px;
+  font-size: 3em;
+  width: 200px;
+  height: 75px;
   border-radius: 10px;
+  margin: 10px;
   outline: none;
-  border: none;
-  box-shadow: 4px 3px 3px #383838;
-  background-color: white;
-}
-
-.timer-button:hover {
   cursor: pointer;
-  background: pink;
 }
 
 .timer-buttons {
+  background-color: tomato;
   text-align: center;
 }
 
-/* Up Next */
-#upNext {
-  text-align: right;
-  font-size: 30px;
-  color: #f4e542;
-  padding-right: 15px;
+/* Up Next Row */
+
+.up-next-row {
+  text-align: center;
+  color: white;
+  background-color: coral;
   letter-spacing: 2px;
 }
 
 /* Tab */
 
-.tab-header {
-  background-color: #82b213;
-  color: white;
-  letter-spacing: 3px;
+.tabs {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }
 
-.tab-header:hover {
-  background-color: #97ce16;
+.tab-header {
+  color: white;
+  letter-spacing: 5px;
   cursor: pointer;
 }
 
-.tabs {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  bottom: 0;
+.tab-header:hover{
+  background-color: black;
+  opacity: .6;
 }
 
 .tab {
-  display: inline-block;
-  width: 45%;
-  height: 50px;
-  overflow-y: hidden;
-  border-radius: 2px;
-  border-width: thin;
-  background-color: white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
   text-align: center;
-  margin: 2px;
-}
-
-.tab-button {
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  font-size: 60px;
-  margin: 20px;
-  outline: none;
-  border: none;
+  z-index: 999999;
+  height: 75px;
+  overflow-y: hidden;
   background-color: white;
-}
-
-.tab-button:hover {
-  cursor: pointer;
+  color: white;
 }
 
 #tab-time {
-  margin-top: 25px;
-  font-size: 65px;
+  font-size: 10em;
 }
 
+.tab-button {
+  width: 150px;
+  height: 75px;
+  margin: 10px;
+  border-radius: 10px;
+  color: black;
+  font-size: 3em;
+  outline: none;
+}
 
-@media screen and (max-width: 625px) {
+/* Media Query */
 
-  .timer {
-    font-size: 75px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+@media screen and (max-width: 515px) {
+
+  .main-title {
+    font-size: 2em;
   }
 
-  #tab-time {
-    margin-top: 75px;
-    font-size: 30px;
+  .timer {
+    font-size: 5em;
+    padding: 5px;
+  }
+
+  .timer-button {
+    font-size: 1em;
+    width: 75px;
+    height: 50px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  #up-next {
+    font-size: 1.2em;
+  }
+
+  .tab-header {
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
   }
 
   .tab-button {
-    font-size: 30px;
-    margin: 2px;
+    width: 120px;
+    height: 50px;
+    font-size: 2em;
   }
 
-  #upNext {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    text-align: center;
-    font-size: 23px;
-  }
 }

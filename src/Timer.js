@@ -100,12 +100,17 @@ extends Component {
     var buttonValue = this.state.isOn ? 'stop' : 'start';
 
     return (
-      <div className="row">
-        <h1 className="timer">{formatTime(this.state.seconds)}</h1>
-        <div className="timer-buttons">
-          <button disable={this.props.aTabIsOpen} className="timer-button" onClick={this.handleClick}>{buttonValue}</button>
-          <button disable={this.props.aTabIsOpen} className="timer-button" onClick={this.reset}>reset</button>
+      <div>
+
+        <div className="row timer-row">
+          <h1 className="timer">{formatTime(this.state.seconds)}</h1>
         </div>
+
+        <div className="row timer-buttons">
+              <button disable={this.props.aTabIsOpen} className="timer-button" onClick={this.handleClick}>{buttonValue}</button>
+              <button disable={this.props.aTabIsOpen} className="timer-button" onClick={this.reset}>reset</button>
+        </div>
+
       </div>
     );
   } // Timer.render

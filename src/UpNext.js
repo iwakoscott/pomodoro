@@ -13,8 +13,8 @@ function UpNext(props) {
   var ending = props.onSession ? 'break' : 'session';
   var message = formatTime(props.seconds) + ' ' + ending;
   return (
-    <div className="row">
-      <h1 id="upNext">up next - {message}</h1>
+    <div className="row up-next-row">
+      <h1 id="up-next">up next - {message}</h1>
     </div>
   );
 } // UpNext

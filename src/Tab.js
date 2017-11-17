@@ -44,7 +44,7 @@ extends Component {
   render(){
 
     return (
-      <div className="col-6 tab">
+      <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 tab" style={this.props.style}>
         <h1 className="tab-header" onClick={ () => { this.sendUpdate() } }>{this.props.title}</h1>
         <h2 id="tab-time">{formatTime(this.state.time)}</h2>
         <button className="tab-button" onClick={() => {this.setState({time: this.state.time + 60})}}><i className="fa fa-plus-square"></i></button>

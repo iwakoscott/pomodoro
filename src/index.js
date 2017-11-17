@@ -11,10 +11,15 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function Title(props) {
   return (
-    <div className="title-box">
+  <div>
+    <div className="row my-name">
+      <h1 id="sig">by Satoshi</h1>
+    </div>
+    <div className="title-box row">
       <h1 className="main-title">[pomodoro.]</h1>
       <CurrentSession onSession={props.onSession}/>
     </div>
+  </div>
   );
 } // Renders title to page
 
@@ -104,7 +109,7 @@ extends Component {
 
   render(){
     return (
-      <div className="container-fluid">
+      <div className="container-fluid app">
         <Title onSession={this.state.onSession}/>
         <Timer
           seconds={this.state.onSession ? this.state.sessionSeconds : this.state.breakSeconds}
@@ -120,6 +125,7 @@ extends Component {
           seconds={this.state.onSession ? this.state.breakSeconds : this.state.sessionSeconds}
         />
         <div className="tabs row">
+
           <Tab title={"session"}
                seconds={this.state.selectedSessionSeconds}
                update={this.handler}
@@ -127,7 +133,9 @@ extends Component {
                forceStopTimer={this.forceStopTimer}
                updateTimerStatus={this.updateTimerStatus}
                toggleTabStatus={this.toggleTabStatus}
+               style={{'background-color': 'DarkOrange'}}
                />
+          <div className="clearfix"></div>
           <Tab title={"break"}
                seconds={this.state.selectedBreakSeconds}
                update={this.handler}
@@ -135,7 +143,9 @@ extends Component {
                forceStopTimer={this.forceStopTimer}
                updateTimerStatus={this.updateTimerStatus}
                toggleTabStatus={this.toggleTabStatus}
+               style={{'background-color': 'Orange'}}
                />
+
         </div>
       </div>
     );

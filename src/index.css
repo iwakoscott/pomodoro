@@ -118,11 +118,6 @@ html {
 
 @media screen and (max-width: 515px) {
 
-  .my-name {
-    visibility: hidden;
-    height: 0px;
-  }
-
   .main-title {
     font-size: 2em;
   }
@@ -141,7 +136,8 @@ html {
   }
 
   #up-next {
-    font-size: 1.2em;
+    visibility: hidden;
+    height: 0px;
   }
 
   .tab-header {
